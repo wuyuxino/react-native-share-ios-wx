@@ -1,13 +1,15 @@
 {
   "name": "react-native-share-ios-wx",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "wx share",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "wx share",
+    "wx login"
   ],
   "repository": {
     "type": "git",
@@ -16,7 +18,7 @@
   "dependencies": {
     "events": "1.0.2"
   },
-  "author": "Wuyx",
+  "author": "wuyx",
   "license": "ISC",
   "peerDependencies": {
     "react-native": "^0.41.2",
