@@ -1,5 +1,6 @@
 
 # react-native-share-ios-wx
+`纯净版sdk，支持微信分享、登陆等功能`
 
 ## Getting started
 
@@ -19,6 +20,8 @@
 3. In XCode, in the project navigator, select your project. Add `libRNReactNativeShareIosWx.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 5. 需要加入的库 libWeChatSDK.a / libsqlite3.0.tbd / libRNReactNativeShareIosWx.a / libz.tbd / SystemConfiguration.framework / CoreTelephony.framework / JavaScriptCore.framework
+6.复制libWeChatSDK.a到项目的ios目录下面，然后在添加到项目中，否则会找不到该文件。
+
 
 #### Android
 
@@ -34,16 +37,7 @@
   	```
       compile project(':react-native-share-ios-wx')
   	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNReactNativeShareIosWx.sln` in `node_modules/react-native-share-ios-wx/windows/RNReactNativeShareIosWx.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using React.Native.Share.Ios.Wx.RNReactNativeShareIosWx;` to the usings at the top of the file
-  - Add `new RNReactNativeShareIosWxPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
-
+    
 ## Usage
 ```javascript
 import * as RNReactNativeShareIosWx from 'react-native-share-ios-wx';
