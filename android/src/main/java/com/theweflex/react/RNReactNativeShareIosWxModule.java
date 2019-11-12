@@ -51,26 +51,26 @@ import java.util.UUID;
 /**
  * Created by tdzl2_000 on 2015-10-10.
  */
-public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEventHandler {
+public class RNReactNativeShareIosWxModule extends ReactContextBaseJavaModule implements IWXAPIEventHandler {
     private String appId;
 
     private IWXAPI api = null;
     private final static String NOT_REGISTERED = "registerApp required.";
-    private final static String INVOKE_FAILED = "WeChat API invoke returns false.";
+    private final static String INVOKE_FAILED = "RNReactNativeShareIosWx API invoke returns false.";
     private final static String INVALID_ARGUMENT = "invalid argument.";
 
-    public WeChatModule(ReactApplicationContext context) {
+    public RNReactNativeShareIosWxModule(ReactApplicationContext context) {
         super(context);
     }
 
     @Override
     public String getName() {
-        return "RCTWeChat";
+        return "RNReactNativeShareIosWx";
     }
 
     /**
-     * fix Native module WeChatModule tried to override WeChatModule for module name RCTWeChat.
-     * If this was your intention, return true from WeChatModule#canOverrideExistingModule() bug
+     * fix Native module RNReactNativeShareIosWxModule tried to override RNReactNativeShareIosWxModule for module name RNReactNativeShareIosWx.
+     * If this was your intention, return true from RNReactNativeShareIosWxModule#canOverrideExistingModule() bug
      *
      * @return
      */
@@ -78,7 +78,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
         return true;
     }
 
-    private static ArrayList<WeChatModule> modules = new ArrayList<>();
+    private static ArrayList<RNReactNativeShareIosWxModule> modules = new ArrayList<>();
 
     @Override
     public void initialize() {
@@ -96,7 +96,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
     }
 
     public static void handleIntent(Intent intent) {
-        for (WeChatModule mod : modules) {
+        for (RNReactNativeShareIosWxModule mod : modules) {
             mod.api.handleIntent(intent, mod);
         }
     }
@@ -231,7 +231,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
             this._getImage(uri, new ResizeOptions(100, 100), new ImageCallback() {
                 @Override
                 public void invoke(@Nullable Bitmap bitmap) {
-                    WeChatModule.this._share(scene, data, bitmap, callback);
+                    RNReactNativeShareIosWxModule.this._share(scene, data, bitmap, callback);
                 }
             });
         } else {
@@ -312,7 +312,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
                     if (mediaObject == null) {
                         callback.invoke(INVALID_ARGUMENT);
                     } else {
-                        WeChatModule.this._share(scene, data, thumbImage, mediaObject, callback);
+                        RNReactNativeShareIosWxModule.this._share(scene, data, thumbImage, mediaObject, callback);
                     }
                 }
             });
@@ -324,7 +324,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
                     if (mediaObject == null) {
                         callback.invoke(INVALID_ARGUMENT);
                     } else {
-                        WeChatModule.this._share(scene, data, thumbImage, mediaObject, callback);
+                        RNReactNativeShareIosWxModule.this._share(scene, data, thumbImage, mediaObject, callback);
                     }
                 }
             });
@@ -508,7 +508,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
 
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit("WeChat_Resp", map);
+                .emit("RNReactNativeShareIosWx_Resp", map);
     }
 
     private interface ImageCallback {

@@ -1,4 +1,3 @@
-
 package com.reactlibrary;
 
 import android.content.Context;
@@ -55,7 +54,7 @@ public class RNReactNativeShareIosWxModule extends ReactContextBaseJavaModule im
 
     private IWXAPI api = null;
     private final static String NOT_REGISTERED = "registerApp required.";
-    private final static String INVOKE_FAILED = "WeChat API invoke returns false.";
+    private final static String INVOKE_FAILED = "RNReactNativeShareIosWx API invoke returns false.";
     private final static String INVALID_ARGUMENT = "invalid argument.";
 
     public RNReactNativeShareIosWxModule(ReactApplicationContext context) {
@@ -68,7 +67,7 @@ public class RNReactNativeShareIosWxModule extends ReactContextBaseJavaModule im
     }
 
     /**
-     * fix Native module RNReactNativeShareIosWxModule tried to override RNReactNativeShareIosWxModule for module name RCTWeChat.
+     * fix Native module RNReactNativeShareIosWxModule tried to override RNReactNativeShareIosWxModule for module name RNReactNativeShareIosWx.
      * If this was your intention, return true from RNReactNativeShareIosWxModule#canOverrideExistingModule() bug
      *
      * @return
@@ -475,7 +474,7 @@ public class RNReactNativeShareIosWxModule extends ReactContextBaseJavaModule im
 
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit("WeChat_Resp", map);
+                .emit("RNReactNativeShareIosWx_Resp", map);
     }
 
     private interface ImageCallback {
