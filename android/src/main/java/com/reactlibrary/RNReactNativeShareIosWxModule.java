@@ -63,7 +63,7 @@ public class RNReactNativeShareIosWxModule extends ReactContextBaseJavaModule im
 
     @Override
     public String getName() {
-        return "RNReactNativeShareIosWx";
+        return "RCTRNReactNativeShareIosWx";
     }
 
     /**
