@@ -26,7 +26,7 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNReactNativeShareIosWxPackage;` to the imports at the top of the file
+  - Add `import com.theweflex.react.RNReactNativeShareIosWxPackage;` to the imports at the top of the file
   - Add `new RNReactNativeShareIosWxPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
@@ -37,7 +37,7 @@
   	```
       compile project(':react-native-share-ios-wx')
   	```
-    
+4. 注意 RNReactNativeShareIosWxModule.java 和 RNReactNativeShareIosWxPackage.java 需要从com.theweflex.react.包名中引入
 ## Usage
 ```javascript
 import * as RNReactNativeShareIosWx from 'react-native-share-ios-wx';
