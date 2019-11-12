@@ -1,6 +1,6 @@
 {
   "name": "react-native-share-ios-wx",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "wx share",
   "main": "index.js",
   "scripts": {
